@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#07111f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Desafio da Palavra</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section id="home" class="screen active">
+      <div class="brand">
+        <div class="logo">📖</div>
+        <h1>Desafio da Palavra</h1>
+        <p>Errou? A mesma pergunta volta até você decorar.</p>
+      </div>
+
+      <div class="record-card">
+        <span>🏆 MAIOR PONTUAÇÃO</span>
+        <strong id="record">0</strong>
+        <small>Escolha um bloco e tente chegar a 1.000.000 sem errar.</small>
+      </div>
+
+      <h2 class="section-title">Escolha um bloco</h2>
+      <div id="blocks" class="blocks"></div>
+
+      <button id="howBtn" class="secondary">Como funciona</button>
+    </section>
+
+    <section id="game" class="screen">
+      <header class="topbar">
+        <div>
+          <small id="blockName">BLOCO A</small>
+          <strong id="score">0</strong>
+        </div>
+        <div id="step" class="pill">1/12</div>
+      </header>
+
+      <div class="progress"><div id="progressFill"></div></div>
+
+      <article class="verse-card">
+        <div id="valueText" class="value">VALENDO 100 PONTOS</div>
+        <div class="question-label">ONDE ESTÁ ESCRITO?</div>
+        <blockquote id="verseText"></blockquote>
+      </article>
+
+      <section id="options" class="options"></section>
+    </section>
+
+    <section id="wrong" class="screen">
+      <div class="result-card">
+        <div class="icon">❌</div>
+        <h2>Você errou</h2>
+        <p>Ao recomeçar, <b>esta mesma pergunta será a primeira</b> até você acertá-la.</p>
+
+        <div class="answer-box">
+          <span>Resposta correta</span>
+          <strong id="correctReference"></strong>
+        </div>
+
+        <div class="verse-review">
+          <p id="reviewVerse"></p>
+        </div>
+
+        <div class="score-review">
+          <span>Você chegou até</span>
+          <strong id="reachedScore">0</strong>
+        </div>
+
+        <button id="retryBtn" class="primary">RECOMEÇAR COM ESTA PERGUNTA</button>
+        <button id="wrongHomeBtn" class="secondary">Escolher outro bloco</button>
+      </div>
+    </section>
+
+    <section id="win" class="screen">
+      <div class="result-card">
+        <div class="icon">👑</div>
+        <h2>1.000.000!</h2>
+        <p>Você acertou as 12 perguntas seguidas deste bloco.</p>
+        <div class="million">1.000.000</div>
+        <button id="againBtn" class="primary">JOGAR O BLOCO NOVAMENTE</button>
+        <button id="winHomeBtn" class="secondary">Escolher outro bloco</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button id="closeModal" class="close">×</button>
+      <h3>Como funciona</h3>
+      <p>Existem quatro blocos fixos: <b>A, B, C e D</b>.</p>
+      <p>Cada bloco tem 12 perguntas. O texto do versículo aparece e você escolhe a referência correta entre A, B, C e D.</p>
+      <p><b>As perguntas e as alternativas são fixas.</b></p>
+      <p>Se você errar, perde a pontuação. Ao recomeçar, a pergunta que você errou passa a ser a primeira da nova tentativa.</p>
+      <p>Ela continuará voltando como primeira pergunta até você acertá-la. Depois você segue a sequência do bloco.</p>
+      <p>Para chegar a 1.000.000, é preciso acertar 12 seguidas.</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="verses.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
