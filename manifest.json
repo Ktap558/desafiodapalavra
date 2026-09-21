@@ -1,0 +1,17 @@
+{
+  "name": "Desafio da Palavra",
+  "short_name": "Palavra",
+  "description": "Jogo bíblico de memorização com quatro blocos fixos e área de estudo com contexto, explicação, lição e reflexão.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050c17",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
